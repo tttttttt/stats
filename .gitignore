@@ -1,0 +1,4 @@
+*.bak
+*.log
+templates_c/*.php
+
