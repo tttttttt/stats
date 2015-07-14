@@ -17,6 +17,7 @@ if($client_id && preg_match("/^[1-9]+[0-9]*$/", $client_id) && $client_status &&
   $stmt = $db_conn->prepare('UPDATE `clients` SET `status` = ? WHERE `id` = ?');
   $stmt->bind_param('si', $client_status, $client_id);
   $stmt->execute();
+  $stmt->close();
 
   $db_conn->close();
   $data['status'] = 'OK';

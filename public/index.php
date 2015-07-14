@@ -19,6 +19,7 @@ if(isset($_POST['submit'])) {
     $stmt = $db_conn->prepare('INSERT INTO `clients` (`added`, `first_name`, `last_name`, `status`, `phone`) VALUES (NOW(), ?, ?, ?, ?)');
     $stmt->bind_param('ssss', $first_name, $last_name, $status, $phone);
     $stmt->execute();
+    $stmt->close();
   }
 }
 
